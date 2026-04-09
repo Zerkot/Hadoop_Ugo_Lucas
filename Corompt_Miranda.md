@@ -38,7 +38,7 @@ python NBR_tags_film.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tags_film
 ```
 
-📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_1.txt) | [Voir le résultat](tp_hadoop_quest_1_rep.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_1.txt) | [Voir le résultat](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_1_rep.txt)
 
 
 > **Résultat :** 1 093 360 tags répartis sur **45 251 films distincts**.
@@ -80,7 +80,7 @@ python NBR_tags_user.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tags_user
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_2.txt) | [Voir le résultat](tp_hadoop_quest_2_rep.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_2.txt) | [Voir le résultat](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_2_rep.txt)
 
 > **Résultat :** 1 093 360 tags ajoutés par **14 592 utilisateurs distincts**.
 
@@ -142,7 +142,7 @@ python NBR_tag_utilise.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tag_utilise
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_4.txt) | [Voir le résultat](tp_hadoop_quest_4_rep.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_4.txt) | [Voir le résultat](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_4_rep.txt)
 
 **Configuration avec bloc = 64 Mo :**
 
@@ -156,7 +156,7 @@ python NBR_tag_utilise.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tag_utilise_64
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_4_64.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_4_64.txt)
 
 ---
 
@@ -196,7 +196,7 @@ python NBR_tags_user_film.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tags_user_film
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_5.txt) | [Voir le résultat](tp_hadoop_quest_5_rep.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_5.txt) | [Voir le résultat](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_5_rep.txt)
 
 **Configuration avec bloc = 64 Mo :**
 
@@ -210,4 +210,4 @@ python NBR_tags_user_film.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tags_user_film_64
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_5_64.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_5_64)
