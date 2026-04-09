@@ -107,7 +107,6 @@ hdfs getconf -confkey dfs.blocksize
 ---
 
 ### 4. Combien de fois chaque tag a-t-il été utilisé pour taguer un film ?
-# Pour config par défaut
 
 On crée le script `NBR_tag_utilise.py` :
 
@@ -133,7 +132,7 @@ if __name__ == '__main__':
     TagUtilise.run()
 ```
 
-On exécute le job :
+**Configuration par défaut :**
 
 ```bash
 python NBR_tag_utilise.py -r hadoop \
@@ -142,13 +141,24 @@ python NBR_tag_utilise.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tag_utilise
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_3.txt) | [Voir le résultat](tp_hadoop_quest_3_rep.txt)
+📄 [Voir l'output](tp_hadoop_quest_4.txt) | [Voir le résultat](tp_hadoop_quest_4_rep.txt)
 
-# Pour config avec 64 Mo
+**Configuration avec bloc = 64 Mo :**
 
-Le résultat reste le meme mais la façon de faire change donc on execute cette commande : python NBR_tag_utilise.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar --jobconf dfs.blocksize=67108864 hdfs:///user/maria_dev/ml-25m/tags.csv -o hdfs:///user/maria_dev/output/NBR_tag_utilise_64
+Le résultat est identique, seule la configuration du bloc change :
 
-Qui donne cet output ducoup : [Voir l'output](tp_hadoop_quest_3_64.txt)
+```bash
+python NBR_tag_utilise.py -r hadoop \
+  --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar \
+  --jobconf dfs.blocksize=67108864 \
+  hdfs:///user/maria_dev/ml-25m/tags.csv \
+  -o hdfs:///user/maria_dev/output/NBR_tag_utilise_64
+```
+
+📄 [Voir l'output](tp_hadoop_quest_4_64.txt)
+
+---
+
 ### 5. Pour chaque film, combien de tags le même utilisateur a-t-il introduits ?
 
 On crée le script `NBR_tags_user_film.py` :
@@ -176,7 +186,7 @@ if __name__ == '__main__':
     TagsUserFilm.run()
 ```
 
-On exécute le job :
+**Configuration par défaut :**
 
 ```bash
 python NBR_tags_user_film.py -r hadoop \
@@ -186,3 +196,17 @@ python NBR_tags_user_film.py -r hadoop \
 ```
 
 📄 [Voir l'output](tp_hadoop_quest_5.txt) | [Voir le résultat](tp_hadoop_quest_5_rep.txt)
+
+**Configuration avec bloc = 64 Mo :**
+
+Le résultat est identique, seule la configuration du bloc change :
+
+```bash
+python NBR_tags_user_film.py -r hadoop \
+  --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar \
+  --jobconf dfs.blocksize=67108864 \
+  hdfs:///user/maria_dev/ml-25m/tags.csv \
+  -o hdfs:///user/maria_dev/output/NBR_tags_user_film_64
+```
+
+📄 [Voir l'output](tp_hadoop_quest_5_64.txt)
