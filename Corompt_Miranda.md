@@ -40,6 +40,7 @@ python NBR_tags_film.py -r hadoop \
 
 📄 [Voir l'output](tp_hadoop_quest_1.txt) | [Voir le résultat](tp_hadoop_quest_1_rep.txt)
 
+
 > **Résultat :** 1 093 360 tags répartis sur **45 251 films distincts**.
 
 ---
