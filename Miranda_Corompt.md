@@ -104,8 +104,40 @@ if __name__ == '__main__':
 [maria_dev@sandbox-hdp ~]$ hdfs dfs -put NBR_tag_utilise.py /user/maria_dev/ml-25m
 [maria_dev@sandbox-hdp ~]$ python NBR_tag_utilise.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs:///user/maria_dev/ml-25m/tags.csv -o hdfs:///user/maria_dev/output/NBR_tag_utilise
 
-[Voir l'output](tp_hadoop_quest_1.txt)
+[Voir l'output](tp_hadoop_quest_3.txt)
 
-[Voir le résultat](tp_hadoop_quest_1_rep.txt)
+[Voir le résultat](tp_hadoop_quest_3_rep.txt)
+
+5. Pour chaque film, combien de tags le même utilisateur a-t-il introduits ?
+
+[maria_dev@sandbox-hdp ~]$ nano NBR_tags_user_film.py
+
+from mrjob.job import MRJob
+
+class TagsUserFilm(MRJob):
+
+    def mapper(self, _, line):
+        try:
+            if line.startswith("userId"):
+                return
+            champs = line.split(",")
+            userId = champs[0]
+            movieId = champs[1]
+            yield (userId, movieId), 1
+        except Exception:
+            pass
+
+    def reducer(self, key, counts):
+        yield key, sum(counts)
+
+if __name__ == '__main__':
+    TagsUserFilm.run()
+    
+[maria_dev@sandbox-hdp ~]$ hdfs dfs -put NBR_tags_user_film.py /user/maria_dev/ml-25m
+[maria_dev@sandbox-hdp ~]$ python NBR_tags_user_film.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs:///user/maria_dev/ml-25m/tags.csv -o hdfs:///user/maria_dev/output/NBR_tags_user_film
+
+[Voir l'output](tp_hadoop_quest_3.txt)
+
+[Voir le résultat](tp_hadoop_quest_3_rep.txt)
 
 
