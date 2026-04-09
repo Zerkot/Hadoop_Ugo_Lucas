@@ -24,7 +24,7 @@ if __name__ == '__main__':
 
 Ensuite on déplace le code python qui est en local dans le hdfs avec la commande : hdfs dfs -put ml-25m/tags.csv /user/maria_dev/tags.csv
 Ensuite on execute dans le hdfs : python NBR_tags_film.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs:///user/maria_dev/ml-25m/tags.csv -o hdfs:///user/maria_dev/output/NBR_tags_film
-voici l'output :
+voici l'output : tp_hadoop_quest_1
 lien vers l'output
 il y a 1093360 tags réparti sur 45 251 films distincts
 ---
