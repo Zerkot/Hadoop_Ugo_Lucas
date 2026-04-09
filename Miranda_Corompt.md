@@ -136,8 +136,8 @@ if __name__ == '__main__':
 [maria_dev@sandbox-hdp ~]$ hdfs dfs -put NBR_tags_user_film.py /user/maria_dev/ml-25m
 [maria_dev@sandbox-hdp ~]$ python NBR_tags_user_film.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs:///user/maria_dev/ml-25m/tags.csv -o hdfs:///user/maria_dev/output/NBR_tags_user_film
 
-[Voir l'output](tp_hadoop_quest_3.txt)
+[Voir l'output](tp_hadoop_quest_5.txt)
 
-[Voir le résultat](tp_hadoop_quest_3_rep.txt)
+[Voir le résultat](tp_hadoop_quest_5_rep.txt)
 
 
