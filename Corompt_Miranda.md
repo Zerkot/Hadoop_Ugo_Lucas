@@ -38,7 +38,7 @@ python NBR_tags_film.py -r hadoop \
   -o hdfs:///user/maria_dev/output/NBR_tags_film
 ```
 
-📄 [Voir l'output](tp_hadoop_quest_1.txt) | [Voir le résultat](tp_hadoop_quest_1_rep.txt)
+📄 [Voir l'output](https://github.com/Zerkot/Hadoop_Ugo_Lucas/blob/main/tp_hadoop_quest_1.txt) | [Voir le résultat](tp_hadoop_quest_1_rep.txt)
 
 
 > **Résultat :** 1 093 360 tags répartis sur **45 251 films distincts**.
