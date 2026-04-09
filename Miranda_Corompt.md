@@ -1,11 +1,32 @@
-# TP Hadoop - HDFS & MapReduce
-## 1. Installation VirtualBox et Sandbox HDP
-VirtualBox permet de créer une machine virtuelle (VM) sur un ordinateur physique (machine hôte).
-Dans notre cas, on utilise la Sandbox HDP qui simule un cluster Hadoop mono-noeud.
-Configuration recommandée :
-- 4 à 8 Go de RAM
-- 4 CPU minimum
-- Virtualisation activée
+# CC2 Pratique
+## Avec la configuration par défaut de Hadoop
+Combien de tags chaque film possède-t-il ?
+On fait d'abord "nano NBR_tags.py"
+avec le code suivant : 
+
+from mrjob.job import MRJob
+
+class TagsParFilm(MRJob):
+
+    def mapper(self, _, line):
+        # Ignorer l'en-tête
+        if line.startswith("userId"):
+            return
+        champs = line.split(",")
+        movieId = champs[1]
+        yield movieId, 1
+
+    def reducer(self, movieId, counts):
+        yield movieId, sum(counts)
+
+if __name__ == '__main__':
+    TagsParFilm.run()
+
+Ensuite on déplace le code python qui est en local dans le hdfs avec la commande : hdfs dfs -put ml-25m/tags.csv /user/maria_dev/tags.csv
+Ensuite on execute dans le hdfs : python NBR_tags_film.py -r hadoop --hadoop-streaming-jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-streaming.jar hdfs:///user/maria_dev/ml-25m/tags.csv -o hdfs:///user/maria_dev/output/NBR_tags_film
+voici l'output :
+lien vers l'output
+il y a 1093360 tags réparti sur 45 251 films distincts
 ---
 ## 2. Accès au cluster
 Accès via navigateur :
